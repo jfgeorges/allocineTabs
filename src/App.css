@@ -1,33 +1,103 @@
-.App {
+@import "./assets/css/reset.css";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  margin: auto;
+  max-width: 1140px;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+header {
+  height: 50px;
   text-align: center;
+  padding-top: 5px;
+  font-size: 40px;
+  font-weight: bold;
+  background-color: #fecc02;
+}
+button {
+  border: none;
+  height: 40px;
+  width: 220px;
+  margin-right: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+.movies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.card:hover {
+  transform: scale(1.05);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  transition: all 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  width: 530px;
+  height: 305px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img {
+  width: 205px;
+  height: 305px;
+  object-fit: cover;
+}
+.title {
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.releaseDate {
+  padding-top: 5px;
+  font-size: 16px;
+  color: grey;
+}
+.overview {
+  padding-top: 20px;
+  max-height: 230px;
+  font-size: 16px;
+  overflow: hidden;
+}
+.title,
+.releaseDate,
+.overview {
+  max-width: 285px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.loading {
+  margin-top: 40px;
+  padding-bottom: 40px;
+  font-size: 24px;
+}
+.pageNumber {
+  cursor: pointer;
+}
+
+.pagination {
+  margin: 10px 20px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-around;
+  height: 30px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 1px rgb(212, 208, 208);
 }
