@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Button from "./components/Button";
-import TabPopular from "./components/TabPopular";
-import TabUpcoming from "./components/TabUpcoming";
-import TabTopRated from "./components/TabTopRated";
+import Tab from "./components/Tab";
 
 class App extends Component {
   state = {
@@ -20,25 +18,12 @@ class App extends Component {
     this.setState({ currentTab: tabName });
   };
 
-  renderTab = () => {
-    switch (this.state.currentTab) {
-      case "Popular Movies":
-        return <TabPopular pagenumber={this.state.pageNumber} />;
-      case "Upcoming Movies":
-        return <TabUpcoming pagenumber={this.state.pageNumber} />;
-      default:
-        return <TabTopRated pagenumber={this.state.pageNumber} />;
-    }
-  };
-  handlePageNumberClick = pageNumber => {
-    this.setState({ pageNumber: pageNumber });
-  };
   render() {
     return (
       <div className="container">
         <header>ALLOCINE</header>
         {this.renderButtons()}
-        {this.renderTab()}
+        <Tab key={this.state.currentTab} currentTab={this.state.currentTab} />
       </div>
     );
   }
